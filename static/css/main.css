@@ -1,0 +1,97 @@
+/* General */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+.error {
+    color: red;
+}
+
+.logout-btn {
+    height: 70px;
+    padding-top: 20px;
+}
+
+.title,
+.logout-btn {
+        border-bottom: 1px solid #e5e5e5;
+}
+
+/* Content */
+.add-post-btn {
+    padding-top: 25px;
+    padding-left: 6%;
+    margin-bottom: 100px;
+}
+
+.subject {
+    font-size: 25px;
+}
+
+.date {
+    position: absolute;
+    right: 0;
+}
+
+.likes-count {
+    float: left;
+}
+
+.like-comment-btn {
+    border-bottom: 1px solid #c0c0c0;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.like-btn,
+.comment-btn {
+    display: inline
+}
+
+.blog-entry-form {
+    margin: 5%;
+}
+
+.entry-label {
+    margin: 10px 0;
+}
+
+.blog-entry-text,
+.comment-entry-text {
+    width: 500px;
+    height: 250px;
+}
+
+.comment {
+    margin: 10px;
+    padding: 7px;
+    border-bottom: 1px solid #ddd;
+}
+
+.comment-date {
+    position: absolute;
+    left: 30px;
+    color: #c0c0c0;
+}
+
+.perma-post {
+    padding: 5%;
+}
+
+.content {
+    margin-top: 40px;
+    max-width: 1140px;
+    max-height: 300px;
+    white-space: pre-wrap; /* css-3 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word;
+}
+
+.post-del-form,
+.comment-del-form {
+    display: inline;
+}

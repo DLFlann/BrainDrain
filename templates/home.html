@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main class="row">
+    <div class="col-md-12 add-post-btn">
+        <a href="/newpost"><button>What's on your mind?</button></a>
+        <span class="error">{{error}}</span>
+    </div>
+    <section class="col-md-12">
+        {% for entry in entries %}
+            <div class="entry">
+                <div class="post-heading">
+                    <span class="subject"><b>{{entry.subject}}</b></span>
+                    <span class="date">{{entry.created.strftime("%b %d, %Y")}}</span>
+                </div>
+                <div class="text-right edit-del-btn">
+                    <a href="/edit/{{entry.key()}}"><button>Edit</button></a>
+                    <a href="/delete/{{entry.key()}}"><button>Delete</button></a>
+                </div>
+                <pre class="content">{{entry.entry}}</pre>
+                <div class="text-right like-comment-btn">
+                    <span class="likes-count">{{entry.likes}} Likes</span>
+                    <form class="like-btn" action="/like/{{entry.key()}}" method="post">
+                      <input type="submit" value="Like">
+                    </form>
+                    <a href="comment/{{entry.key()}}"><button>Comment</button></a>
+                </div>
+                <div class="comment-section">
+                {% for comment in entry.comments %}
+                    <div class="comment">
+                        <div><b>{{db.get(comment).creator}}</b></div>
+                        <div>{{db.get(comment).entry}}</div>
+                        <div class="text-right edit-del-btn">
+                            <span class="comment-date">{{db.get(comment).created.strftime("%b %d, %Y")}}</span>
+                            <a href="/editcomment/{{db.get(comment).key()}}"><button>Edit</button></a>
+                            <a href="/deletecomment/{{db.get(comment).key()}}"><button>Delete</button></a>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+            <hr>
+        {% endfor %}
+    </section>
+</main>
+
+{% endblock %}

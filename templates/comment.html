@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <main class="row">
+        <section class="col-md-12">
+            <form class="comment-entry-form" method="post">
+            <label>
+                <div class="entry-label">Add a comment</div>
+                <textarea class="comment-entry-text" name="content">{{content}}</textarea>
+            </label>
+            <div class="error">
+                {{error}}
+            </div>
+            <a href="/"><button type="button">Cancel</button></a>
+            <input type="submit">
+        </form>
+        </section>
+    </main>
+{% endblock %}

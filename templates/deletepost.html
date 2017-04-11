@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <main class="row">
+            <section class="col-md-12">
+                <h1>Are you sure you want to delete this post?</h1>
+            </section>
+            <section class="col-md-12">
+                <a href="/"><button>Cancel</button></a>
+                <form class="post-del-form" method="post">
+                    <input type="submit" value="Delete">
+                </form>
+            </section>
+            <section class="col-md-12 perma-post">
+                <div class="text-center subject"><h2>{{entry.subject}}</h2></div>
+                <div class="text-center content">{{entry.entry}}</div>
+            </section>
+        </main>
+{% endblock %}
